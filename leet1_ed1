@@ -1,0 +1,15 @@
+#leetcode question 1
+#Brute Force algorithm
+class Solution:
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        len_nums = len(nums)
+        for i in range(len_nums):
+            val = target - nums[i]
+            for j in range(i + 1, len_nums):
+                if val == nums[j]:
+                    return [i, j]
