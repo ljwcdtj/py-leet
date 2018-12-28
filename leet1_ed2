@@ -1,0 +1,21 @@
+class Solution:
+#using dict(hash) to look up the result
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        dict_nums = {}
+        len_nums = len(nums)
+        locs = []
+        for i in range(len_nums): 
+            geti = dict_nums.get(target - nums[i])
+            if None == geti:
+                dict_nums[nums[i]] = [i, target - nums[i]]
+            else:
+                if nums[i] == geti[1] and i != geti[0]:                        
+                    locs.append(i)
+                    locs.append(geti[0])
+                    break                                     
+        return locs
